@@ -1,0 +1,7 @@
+arr = list(s)
+numvowels = 0
+vowels = ['a','e','i','o','u']
+for c in arr:
+    if c in vowels:
+        numvowels += 1
+print("Number of vowels: ",numvowels)
