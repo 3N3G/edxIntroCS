@@ -1,0 +1,29 @@
+sarr = list(s)
+arr = []
+for i in range(len(s)-1):
+    if sarr[i] <= sarr[i+1]:
+        arr.append(1)
+        #print("inc")
+    else:
+        arr.append(-1)
+        #print("dec")
+
+consec = 0
+maxconsec = 0
+maxstring = s[0]
+i = 0
+while i < len(s) - 1:
+    if arr[i] == 1:
+        consec += 1
+        i += 1
+    else:
+        if maxconsec < consec:
+            maxconsec = consec
+            maxstring = s[i-consec:i+1]
+            print(maxstring)
+        consec = 0;
+        i += 1
+if maxconsec < consec:
+    maxconsec = consec
+    maxstring = s[i-consec:i+1]
+print("Longest substring in alphabetical order is: ",maxstring)
