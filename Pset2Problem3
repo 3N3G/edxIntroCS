@@ -1,0 +1,15 @@
+# Paste your code into this box
+monthlyInterestRate = annualInterestRate / 12.0
+minPayment = balance / 12
+maxPayment = balance * ((1+monthlyInterestRate)**12) / 12.0
+while (round(minPayment,2) < round(maxPayment,2)):
+    currentbalance = balance
+    payment = (minPayment + maxPayment)/2
+    for i in range(12):
+        monthlyUnpaid = currentbalance - payment
+        currentbalance = monthlyUnpaid * (1 + monthlyInterestRate)
+    if currentbalance <= 0:
+        maxPayment = payment
+    else:
+        minPayment = payment
+print("Lowest Payment: ",round(minPayment,2))
