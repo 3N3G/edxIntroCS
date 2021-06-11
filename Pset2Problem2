@@ -1,0 +1,14 @@
+# Paste your code into this box
+lowestPayment = 0
+works = False
+monthlyInterestRate = annualInterestRate / 12.0
+while (not works):
+    currentbalance = balance
+    for i in range(12):
+        monthlyUnpaid = currentbalance - lowestPayment
+        currentbalance = monthlyUnpaid * (1 + monthlyInterestRate)
+    if currentbalance <= 0:
+        works = True
+    else:
+        lowestPayment += 10
+print("Lowest Payment: ",lowestPayment)
