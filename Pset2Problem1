@@ -1,0 +1,9 @@
+# Paste your code into this box
+currentbalance = balance
+for i in range(12):
+    monthlyInterestRate = annualInterestRate / 12.0
+    minMonthlyPayment = monthlyPaymentRate * currentbalance
+    monthlyUnpaid = currentbalance - minMonthlyPayment
+    currentbalance = monthlyUnpaid * (1 + monthlyInterestRate)
+    
+print("Remaining balance: ", round(currentbalance,2))
